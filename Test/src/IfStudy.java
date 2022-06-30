@@ -45,19 +45,20 @@ public class IfStudy {
 		
 		/*
 		 * 두 값을 오름차순으로 정
+		 * 
+		  System.out.print("변수a : ");
+		  int a = scanner.nextInt();
+		  System.out.print("변수b : ");
+		  int b = scanner.nextInt();
+		
+		  if(a>b) {
+			  int t = a;
+			  a = b;
+			  b = t;
+		  }
+		  System.out.println("정렬 " + a + " " + b);
 		 */
 		
-		System.out.print("변수a : ");
-		int a = scanner.nextInt();
-		System.out.print("변수b : ");
-		int b = scanner.nextInt();
-		
-		if(a>b) {
-			int t = a;
-			a = b;
-			b = t;
-		}
-		System.out.println("정렬 " + a + " " + b);
 	}
 
 }
