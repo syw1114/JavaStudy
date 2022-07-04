@@ -2,7 +2,44 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayStudy {
-
+	// --- 배열 a의 최대값을 구해서 반환 --- //
+	
+	static int maxOf(int[] a) {
+		int max = a[0];
+		for(int i = 0; i < a.length; i++) {
+			if (a[i] > max) {
+				max = a[i];
+			}
+		}
+		return max;
+	}
+	// --- 배열 a의 요소에서 key와 일치하는 가장 선두의 요소를 선형탐색 --- //
+	static int Search(int[] a, int key) {
+		for(int i =0; i<a.length; i++) 
+			if(a[i] == key)
+				return i;
+		return -1;
+	}
+	
+	// --- 두 배열 a,b 의 모든 요소는 같은가? --- //
+	static boolean equals(int[] a, int[] b) {
+		if(a.length != b.length)
+			return false;
+		for(int i = 0; i < a.length; i++) {
+			if(a[i] != b[i])
+				return false;
+		}
+		return true;
+	}
+	
+	// --- 다차원 배열의 전달 --- //
+	// --- 행렬 x와 y의 합을 z에 대입 --- //
+	static void addMatrix(int[][] x, int[][] y, int[][] z) {
+		for(int i = 0; i < x.length; i++)
+			for(int j =0; j< x[i].length; j++){
+				z[i][j] = x[i][j] + y[i][j];
+			}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		/*
@@ -80,5 +117,28 @@ public class ArrayStudy {
 		 * 3차원 배열
 		 * long[][][] y = new long[2][3][4];
 		 */
+		
+		//최대값을 구하는 메소드
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("인원 수는? : ");
+		int person = scanner.nextInt();
+		
+		int[] height = new int[person];
+		int[] weight = new int[person];
+		
+		System.out.println(person + "명의 신장과 체주을 입력하시오.");
+
+		for(int i = 0; i < person; i++) {
+			System.out.print((i+1) + "번의 신장 : ");
+			height[i] = scanner.nextInt();
+			System.out.print((i+1) + "번의 체중 : ");
+			weight[i] = scanner.nextInt();
+		}
+		
+		System.out.println("가장 키가 큰 사람의 신장 : " + maxOf(height) + "cm");
+		System.out.println("가장 뚱뚱한 사람의 체중 : " + maxOf(weight) + "kg");
+		
+		
 	}
 }
