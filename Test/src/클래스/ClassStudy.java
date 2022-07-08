@@ -1,4 +1,12 @@
+package 클래스;
+
 import java.awt.geom.CubicCurve2D;
+
+class Account {
+	String name; 
+	String no;
+	long balance;
+}
 
 public class ClassStudy {
 	/*
@@ -7,12 +15,7 @@ public class ClassStudy {
 	 *  데이터 보호에 대한 무보증.
 	 */
 	
-	class Account {
-		String name; 
-		String no;
-		long balance;
-	}
-	
+private void mian() {
 	//클래스의 생성
 	Account chulsoo = new Account(); // Account형의 chulsoo
 	
@@ -58,8 +61,6 @@ public class ClassStudy {
 			balance -= k;
 		}	
 	}
-	public static void main(String[] args) {
-		Account2 chulsoo = new Account2("철수", "123456", 1000); // 생성
-	}
-
+	Account2 chulsoo1 = new Account2("철수", "123456", 1000); // 생성
+}
 }
